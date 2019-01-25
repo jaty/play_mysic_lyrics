@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "PlayMusic Lyrics",
+    "version": "0.0.1",
+    "permissions": [
+        "http://*.azlyrics.com/*",
+        "https://*.azlyrics.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://play.google.com/music/listen*"],
+            "css": ["main.css"],
+            "js": ["index.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}
