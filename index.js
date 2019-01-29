@@ -28,27 +28,14 @@ const LyricsLoader = {
     },
 
     onSongChange: function (mutations, observer) {
-        let songTitleEl = document.getElementById(this.playerElements.title);
-        let songArtistEl = document.getElementById(this.playerElements.artist);
-
-        this.currentSong.title = songTitleEl.textContent;
-        this.currentSong.artist = songArtistEl.textContent;
+        this.getSongData();
 
         if (!this.loadTextButton) {
             this.renderButton();
         }
 
-        this.loadTextButton.classList.remove('active');
-
-        let artist = this.currentSong.artist.toLowerCase().replace(/[^A-Za-z0-9]+/g, '').replace(/^the/, '');
-        let song = this.currentSong.title.toLowerCase().replace(/[^A-Za-z0-9]+/g, '');
-
-        chrome.runtime.sendMessage({
-            contentScriptQuery: 'fetchUrl',
-            url: 'http://www.azlyrics.com/lyrics/' + artist + '/' + song + '.html'
-        }, response => {
-            this.textPopup.innerHTML = '<div>' + response + '</div>';
-        });
+        this.hideText();
+        this.fetchText();
     },
 
     onClick: function(event) {
@@ -58,7 +45,7 @@ const LyricsLoader = {
 
         let eventEl = event.target || event.srcElement;
         if (eventEl.id != this.loadTextButton.id) {
-            this.loadTextButton.classList.remove('active');
+            this.hideText();
             return;
         }
 
@@ -77,6 +64,30 @@ const LyricsLoader = {
         this.textPopup.className = 'tooltiptext';
 
         this.loadTextButton.appendChild(this.textPopup);
+    },
+
+    hideText: function() {
+        this.loadTextButton.classList.remove('active');
+    },
+
+    getSongData: function() {
+        let songTitleEl = document.getElementById(this.playerElements.title);
+        let songArtistEl = document.getElementById(this.playerElements.artist);
+
+        this.currentSong.title = songTitleEl.textContent;
+        this.currentSong.artist = songArtistEl.textContent;
+    },
+
+    fetchText: function() {
+        let artist = this.currentSong.artist.toLowerCase().replace(/[^A-Za-z0-9]+/g, '').replace(/^the/, '');
+        let song = this.currentSong.title.toLowerCase().replace(/[^A-Za-z0-9]+/g, '');
+
+        chrome.runtime.sendMessage({
+            contentScriptQuery: 'fetchUrl',
+            url: 'http://www.azlyrics.com/lyrics/' + artist + '/' + song + '.html'
+        }, response => {
+            this.textPopup.innerHTML = '<div>' + response + '</div>';
+        });
     }
 }
 

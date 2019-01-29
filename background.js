@@ -14,7 +14,7 @@ chrome.runtime.onMessage.addListener(
             let parsedText = parseText(html);
             return sendResponse(parsedText);
         })
-        .catch(error => console.log(error));
+        .catch(error => sendResponse('Sorry, no text found for this song'));
         return true;
       }
     }

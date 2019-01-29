@@ -1,9 +1,8 @@
 .load_text_btn {
     cursor: pointer;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABL0lEQVR4Ae3asY3CQBBG4c2cuAW4ZDOT3ExrUANyCUcRUMJRgt0JsoSIYAkdIjHGP5bem5jgk5B2LE16JyIios3Kdnb2i5cPz8XOttus0pQ1tZ/s4WW+sYefmjpNU66s9zL/WJ+rSQB28KIZO6R4lu0uA9wthwG+9yKcfRhgnRJgfRjgNyXAr3FA0c63AgAASBOnAgAA8OoHAAAA0A4AAAAAaAcALzEAAAAAAOAlBgAgOgAA8D0AAAAAAAAWCeAlBgBgkAKGMEB/chYFtFJAGwb8/ijPLn0dBqRkf/rD1xAgV9bpTo8DgLGmtuPcx992bOqUwoAxX/t2nvN7//ft+N+PA/QBAAAAwCcDMCz8uNu6pQPahQPi+74YoNn3A4Dgvq8HiPf9OEC378cBRERET7IfaxjFKr5WAAAAAElFTkSuQmCC);
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABL0lEQVR4Ae3asY3CQBBG4c2cuAW4ZDOT3ExrUANyCUcRUMJRgt0JsoSIYAkdIjHGP5bem5jgk5B2LE16JyIios3Kdnb2i5cPz8XOttus0pQ1tZ/s4WW+sYefmjpNU66s9zL/WJ+rSQB28KIZO6R4lu0uA9wthwG+9yKcfRhgnRJgfRjgNyXAr3FA0c63AgAASBOnAgAA8OoHAAAA0A4AAAAAaAcALzEAAAAAAOAlBgAgOgAA8D0AAAAAAAAWCeAlBgBgkAKGMEB/chYFtFJAGwb8/ijPLn0dBqRkf/rD1xAgV9bpTo8DgLGmtuPcx992bOqUwoAxX/t2nvN7//ft+N+PA/QBAAAAwCcDMCz8uNu6pQPahQPi+74YoNn3A4Dgvq8HiPf9OEC378cBRERET7IfaxjFKr5WAAAAAElFTkSuQmCC) no-repeat;
     width: 24px;
     height: 24px;
-    background-repeat: no-repeat;
     background-size: contain;
     font-family: sans-serif;
     font-size: medium;
